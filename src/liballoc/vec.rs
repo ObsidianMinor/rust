@@ -2089,8 +2089,10 @@ macro_rules! __impl_slice_eq1 {
 }
 
 __impl_slice_eq1! { Vec<A>, Vec<B> }
+__impl_slice_eq1! { Vec<A>, [B] }
 __impl_slice_eq1! { Vec<A>, &'b [B] }
 __impl_slice_eq1! { Vec<A>, &'b mut [B] }
+__impl_slice_eq1! { Cow<'a, [A]>, [B], Clone }
 __impl_slice_eq1! { Cow<'a, [A]>, &'b [B], Clone }
 __impl_slice_eq1! { Cow<'a, [A]>, &'b mut [B], Clone }
 __impl_slice_eq1! { Cow<'a, [A]>, Vec<B>, Clone }
